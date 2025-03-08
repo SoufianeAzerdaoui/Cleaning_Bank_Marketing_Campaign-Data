@@ -1,0 +1,23 @@
+language: python
+
+python:
+  - "3.8"  # Change this to your Python version
+
+install:
+  - pip install --upgrade pip
+  - pip install sphinx
+  - pip install nbconvert  # For Jupyter notebook conversion
+
+script:
+  - jupyter nbconvert --to rst /mnt/data/notebook.ipynb
+  - mv notebook.rst source/
+  - make html  # Build Sphinx documentation
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN  # Set this in Travis CI environment variables
+  keep_history: true
+  local_dir: build/html
+  on:
+    branch: main  # Change to 'master' or your deployment branch
