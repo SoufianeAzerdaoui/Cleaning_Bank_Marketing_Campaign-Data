@@ -17,5 +17,61 @@ In this project, you will apply data-cleaning techniques to process information 
 ### Prerequisites
 Ensure you have Python installed (recommended version: 3.8+). You can check your Python version with:
 
-```bash
+bash
 python --version
+
+
+### Install Required Dependencies
+First, create a virtual environment (optional but recommended):
+
+bash
+python -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+
+
+Then install dependencies:
+
+bash
+pip install -r requirements.txt
+
+
+## Usage
+To run the data cleaning process, execute the following command:
+
+bash
+jupyter notebook notebook.ipynb
+
+
+
+## Documentation
+This project uses **Sphinx** to generate documentation. To build the docs:
+
+bash
+cd docs
+make html
+
+
+The generated documentation will be available in docs/_build/html/index.html.
+
+## Continuous Integration
+This project uses **Travis CI** for continuous integration. Ensure your .travis.yml file includes:
+
+yaml
+language: python
+python:
+  - "3.8"
+install:
+  - pip install -r requirements.txt
+script:
+  - pytest
+
+
+To enable Travis CI:
+1. Link your GitHub repository to [Travis CI](https://travis-ci.com/).
+2. Push changes to trigger the CI pipeline.
+
+
+
+### Notes:
+- Be sure to replace `images/sphinx-logo.png` and `images/travis-ci-logo.png` with the actual paths to your images in your project directory.
+- The images will be displayed wherever you place the image tags.
