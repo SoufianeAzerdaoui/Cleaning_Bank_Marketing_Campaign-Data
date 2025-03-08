@@ -71,7 +71,3 @@ To enable Travis CI:
 2. Push changes to trigger the CI pipeline.
 
 
-
-### Notes:
-- Be sure to replace `images/sphinx-logo.png` and `images/travis-ci-logo.png` with the actual paths to your images in your project directory.
-- The images will be displayed wherever you place the image tags.
